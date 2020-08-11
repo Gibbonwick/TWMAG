@@ -123,6 +123,18 @@ public class BattleSystem : MonoBehaviour
 		StartCoroutine(EnemyTurn());
 	}
 
+	IEnumerator PlayerShout()
+	{
+		playerUnit.Shout(5);
+
+		dialogueText.text = "You feel stronger!";
+
+		yield return new WaitForSeconds(2f);
+
+		state = BattleState.ENEMYTURN;
+		StartCoroutine(EnemyTurn());
+	}
+
 	public void OnAttackButton()
 	{
 		if (state != BattleState.PLAYERTURN)
@@ -139,4 +151,11 @@ public class BattleSystem : MonoBehaviour
 		StartCoroutine(PlayerHeal());
 	}
 
+	public void OnShoutButton()
+	{
+		if (state != BattleState.PLAYERTURN)
+			return;
+
+		StartCoroutine(PlayerShout());
+	}
 }

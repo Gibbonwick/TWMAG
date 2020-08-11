@@ -30,4 +30,9 @@ public class Unit : MonoBehaviour
 			currentHP = maxHP;
 	}
 
+
+	public void Shout(int buff)
+	{
+		damage += buff;
+	}
 }
