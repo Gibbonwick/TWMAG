@@ -10,6 +10,7 @@ public class Unit : MonoBehaviour
 
 	public int damage;
 
+	public int speed;
 	public int maxHP;
 	public int currentHP;
 
