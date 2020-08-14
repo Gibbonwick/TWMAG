@@ -54,6 +54,7 @@ public class PauseMenu : MonoBehaviour
     //Only works in build, not in the editor
     public void ExitGame()
     {
-        Application.Quit();
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("MainMenu");
     }
 }
